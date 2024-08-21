@@ -27,7 +27,7 @@ $routes->post('/Crud/update/(:num)', 'Crud::update/$1');
 //$routes->get('/siswa', 'Home::index');
 
 
-$routes->get('/Crud/data', 'Crud::data',(session()->get('login') == true) ?  :['filter' => 'auth']);
+$routes->get('/Crud/data', 'Crud::data',['filter' => 'auth']);
 // testing join model
 //$routes->get('/test', 'Crud::test');
 // if (session()->get('login') === false) {
