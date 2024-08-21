@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+    to right,
+    #051937,
+    #032958,
+    #00397b,
+    #00189f,
+    #075bc5
+  );
+}
+
+.container {
+  width: 85%;
+  height: 80vh;
+  background: transparent;
+  backdrop-filter: 15px;
+  margin: 50px auto;
+  padding: 10px;
+  position: relative;
+  border: 1px solid rgb(164, 213, 241);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.container form h1 {
+  text-align: center;
+  color: rgb(9, 77, 204);
+}
+
+::placeholder {
+  font-size: 0.9rem;
+  text-align: center;
+  color: rgb(4, 68, 68);
+}
+/* .Nama,
+.Hobi,
+.Motivasi,
+.umur {
+  width: 60%;
+  height: 70px;
+  /* background: #4e4747*/
+.Nama label,
+.hobi label,
+.umur label {
+  width: 40%;
+  box-sizing: border-box;
+  margin: 40px 0px 20px 10px;
+  padding: 10px;
+  /* background: #000; */
+}
+.Nama input,
+.hobi input,
+.umur input {
+  text-align: center;
+  font-size: 1em;
+  padding: 10px;
+  width: 89%;
+  height: 5vh;
+  box-sizing: border-box;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.tombol {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  margin: 25px auto;
+  left: 1%;
+  text-align: center;
+}
+.tombol button {
+  letter-spacing: 1px;
+  width: 100px;
+  height: 30px;
+  font-size: 1rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.tombol a {
+  width: 150px;
+  height: 30px;
+  padding: 4px 4px;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  list-style-type: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  border: 1px solid;
+  outline: none;
+  background-color: #18ecc9;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+/* tata letak  */
+.Nama {
+  margin: 25px 10px 10px 25vh;
+  display: inline-block;
+  width: 40%;
+  border: 1px solid transparent;
+  outline: none;
+  color: aliceblue;
+}
+.hobi {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  width: 40%;
+  outline: none;
+  border: 1px solid transparent;
+  color: aliceblue;
+}
+.umur {
+  position: absolute;
+  right: 45.5%;
+  top: 19%;
+  width: 40%;
+  outline: none;
+  color: aliceblue;
+
+  border: 1px solid transparent;
+}
+.skil {
+  width: 40%;
+  position: absolute;
+  right: 9%;
+  top: 16.5%;
+  margin: 10px;
+  padding: 10px;
+}
+.skil label {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 5px;
+  color: aliceblue;
+}
+.skil #id_skil {
+  width: 90%;
+  height: 5vh;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -o-transform: translateY(-4px);
+}
+.motivasi {
+  display: inline-block;
+  position: absolute;
+  left: 15%;
+  top: 35%;
+}
+.motivasi textarea {
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  width: 130vh;
+  height: 10vh;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
