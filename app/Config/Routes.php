@@ -26,8 +26,15 @@ $routes->post('/Crud/update/(:num)', 'Crud::update/$1');
 // multipel tabel / join
 //$routes->get('/siswa', 'Home::index');
 
+if (session()->get('login') !== true) {
+  $routes->get('/Crud/data', 'Crud::data',['filter' => 'auth']);
+  
+} else {
+  if(session()->get('login') == true){
+    $routes->get('/Crud/data', 'Crud::data');
+  }
 
-$routes->get('/Crud/data', 'Crud::data',['filter' => 'auth']);
+}
 // testing join model
 //$routes->get('/test', 'Crud::test');
 // if (session()->get('login') === false) {
