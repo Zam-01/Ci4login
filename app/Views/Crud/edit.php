@@ -149,9 +149,15 @@
         echo $isi['Motivasi'];
         ?>
       </textarea>
-      <select id="id_skil" name="id_skil" placeholder="pilih satu" required>
+      <div class="umur">
+        <label for="Umur">Umur</label>
+        <input type="text" id="Umur" name="Umur" required value="<?= $isi['Umur'] ?>">
+      </div>
+      <select id="id_skil" name="id_skill" placeholder="pilih satu" required>
         <?php foreach ($skil as $data) : ?>
-          <option value="<?= $data['id_skil']; ?>"><?= $data['Nama_skil']; ?></option>
+          <option value="<?= $data['id_skill']; ?> " <?= $data["id_skill"] == $isi['id_skill'] ? 'selected' : '' ?>>
+            <?= $data['Nama_skill'];  ?>
+          </option>
         <?php endforeach;  ?>
       </select>
       <br>

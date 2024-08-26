@@ -38,7 +38,7 @@ class Crud extends BaseController
         ->join('skill', 'skill.id_skill = data_motivasi.id_skill')
         ->findAll();
     }
-    return view('Crud/data',$data);
+    return view('Crud/data', $data);
   }
   public function contac()
   {
@@ -70,7 +70,6 @@ class Crud extends BaseController
     ]);
     session()->setFlashdata('pesan', 'WAW ,MOTIVASIMU KEREN ');
     return redirect()->to('/Crud/data');
-  
   }
   //hapus data 
   public function hapus($id)
@@ -103,7 +102,7 @@ class Crud extends BaseController
       'Hobi' => $this->request->getVar('Hobi'),
       'Motivasi' => $this->request->getVar('Motivasi'),
       'Umur'    => $this->request->getVar('Umur'),
-      'id_skil'  => $this->request->getVar('id_skil')
+      'id_skill'  => $this->request->getVar('id_skill')
     ]);
     //kirim pesan jika data berhasil ditambah
     session()->setFlashdata('pesan', 'MOTIVASIMU BERHASIL DI UBAH ');
@@ -198,7 +197,7 @@ class Crud extends BaseController
 
   public function ViewAdmin()
   { //mengambil data dari tabel login
-      session();
+    session();
     //ambil data dari session
     $data['Email'] = session()->get('Email');
     $data['Username'] = session()->get('Username');
@@ -215,14 +214,13 @@ class Crud extends BaseController
         ->join('skill', 'skill.id_skill = data_motivasi.id_skill')
         ->findAll();
     }
-    return view('Crud/data',$data);
+    return view('Crud/data', $data);
   }
   public function logout()
   {
     $session = session();
     $session->destroy();
-    $session->setFlashdata('logout','anda sudah logout');
+    $session->setFlashdata('logout', 'anda sudah logout');
     return redirect()->to('/login/register');
   }
-
 }

@@ -23,25 +23,24 @@ $routes->get('/hapus(:num)', 'Crud::hapus/$1');
 $routes->get('/ubah(:num)', 'Crud::edit/$1');
 //update data
 $routes->post('/Crud/update/(:num)', 'Crud::update/$1');
+$routes->post('Crud/data', 'Crud::data');
 // multipel tabel / join
 //$routes->get('/siswa', 'Home::index');
 
 if (session()->get('login') !== true) {
-  $routes->get('/Crud/data', 'Crud::data',['filter' => 'auth']);
-  
+  $routes->get('/Crud/data', 'Crud::data', ['filter' => 'auth']);
 } else {
-  if(session()->get('login') == true){
+  if (session()->get('login') == true) {
     $routes->get('/Crud/data', 'Crud::data');
   }
-
 }
 // testing join model
 //$routes->get('/test', 'Crud::test');
 // if (session()->get('login') === false) {
-  
+
 // } else {
 //   $routes->get('/Crud/data', 'Crud::data');
-  
+
 // }
 
 
@@ -52,3 +51,4 @@ $routes->get('/Crud/sigin', 'Crud::sigin');
 $routes->post('/Crud/get_sigin', 'Crud::get_sigin');
 $routes->get('/logout', 'Crud::logout');
 $routes->get('/Crud/ViewAdmin', 'Crud::ViewAdmin');
+$routes->get('/login/login_admin', 'Crud::sigin');

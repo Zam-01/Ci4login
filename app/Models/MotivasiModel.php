@@ -12,9 +12,16 @@ class MotivasiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['Nama','Hobi','Motivasi','Umur','id_skill'];
+    protected $allowedFields = ['Nama', 'Hobi', 'Motivasi', 'Umur', 'id_skill'];
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
+
+    // function cari
+    public function cari($keyword)
+    {
+        return $this->like('Nama',  $keyword)->findAll();
+    }
+
 
     protected array $casts = [];
     protected array $castHandlers = [];
