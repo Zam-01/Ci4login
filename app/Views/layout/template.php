@@ -17,14 +17,10 @@
   <!-- ?> -->
   <br>
   <?= $this->renderSection('copas'); ?>
-
-</body><br>
-<br>
-<br>
-<br>
-<footer>
-  copyright &copy; <?= date('Y'); ?>
-  <b>WebPrograming | Zam.dev </b>
-</footer>
+  <footer>
+    copyright &copy; <?= date('Y'); ?>
+    <b>WebPrograming | Zam.dev </b>
+  </footer>
+</body>
 
 </html>
