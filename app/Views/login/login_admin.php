@@ -28,7 +28,7 @@
       <span class="tombol">
         <button type="submit" name="KIRIM" onclick="return confirm('pastikan username dan passsword anda benar')">Sigin</button>
         <span>belum daftar?&#128073;</span>
-        <a href="/login/register">daftar disini!!</a>
+        <a href="/login/register2">daftar disini!!</a>
       </span>
     </form>
   </div>

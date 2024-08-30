@@ -45,7 +45,7 @@ if (session()->get('login') !== true) {
 
 
 //login user
-$routes->get('/login/register', 'Crud::Userlogin');
+$routes->get('/login/register2', 'Crud::Userlogin');
 $routes->post('/Crud/Daftar', 'Crud::getdata');
 $routes->get('/Crud/sigin', 'Crud::sigin');
 $routes->post('/Crud/get_sigin', 'Crud::get_sigin');

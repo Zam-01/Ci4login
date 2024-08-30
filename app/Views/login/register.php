@@ -55,18 +55,3 @@
 </div>
 
 <?= $this->endSection(); ?>
-
-
-
-<!-- <h4 style="
-        text-align:center;
-        font-size:0.8em;
-        color:red;
-        ">
-</h4>-->
-<?php
-//if ($validation->getError('Email')) {
-//echo $validation->getError('Email'); 
-?>
-<?php //} 
-?>

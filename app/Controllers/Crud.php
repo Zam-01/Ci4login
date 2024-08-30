@@ -54,7 +54,7 @@ class Crud extends BaseController
     $data['judul'] = "Form Data";
     $data['join'] =
       $join->findAll();
-    return view('Crud/register', $data);
+    return view('Crud/register2', $data);
   }
   // insert data 
   public function save()
@@ -90,7 +90,7 @@ class Crud extends BaseController
     $skil = new SkillModel();
     $data['skil'] = $skil->findAll();
     $data['isi'] = $model->find($id);
-    return view('Crud/edit', $data);
+    return view('Crud/edit2', $data);
   }
   //update
   public function update($id)
@@ -108,7 +108,7 @@ class Crud extends BaseController
     session()->setFlashdata('pesan', 'MOTIVASIMU BERHASIL DI UBAH ');
     return redirect()->to('/Crud/data');
   }
-  // login
+  // login email username and pasword
   protected $daftarmodel;
   public function __construct()
   {
@@ -120,7 +120,7 @@ class Crud extends BaseController
     $data = [
       'valid' => \Config\Services::validation()
     ];
-    return view('/login/register', $data);
+    return view('/login/register2', $data);
   }
   public function getdata()
   {
@@ -133,30 +133,32 @@ class Crud extends BaseController
         ],
       ],
       'Username' => [
-        'rules' => 'is_unique[login.Username]|exact_length[12]',
+        'rules' => 'is_unique[login.Username]|exact_length[8]',
         'errors' => [
           'is_unique' => '{field} sudah didaftarkan, coba daftarkan username yang lain!!!',
-          'exact_length' => '{field} maksimal 12 karakter'
-        ],
-      ],
-      'Password' => [
-        'rules' => 'is_unique[login.Password]|exact_length[7]',
-        'errors' => [
-          'is_unique' => '{field} sudah didaftarkan, buatlah Password yang mudah anda ingat!!',
-          'exact_length' => '{field} maksimal 7 karakter'
+          'exact_length' => '{field} minimal 8 karakter'
         ],
       ],
     ])) {
-      return view('/login/register', ['valid' => $validation]); //mengirim pesan kesalahan dari validation
+      return view('/login/register2', ['valid' => $validation]); //mengirim pesan kesalahan dari validation
     }
-    $register = $this->daftarmodel->insert([
-      'Username' => $this->request->getVar('Username'),
-      'Password' => $this->request->getVar('Password'),
-      'Email' => $this->request->getVar('Email')
-    ]);
+    $Username =  $this->request->getVar('Username');
+    $Password =  $this->request->getVar('Password');
+    $Email =  $this->request->getVar('Email');
+    $chekPass =  $this->request->getVar('chekPass');
+    if ($Password != $chekPass) {
+      session()->setFlashdata('password', 'Password yang anda masukkan salah');
+      return redirect()->to('/login/register2');
+    } else {
+      $register = $this->daftarmodel->insert([
+        'Username' => $Username,
+        'Password' => $Password,
+        'Email' => $Email
+      ]);
+    }
     if (empty($register)) {
       session()->setFlashdata('gagal', 'silahkan registrasi terlebih dahulu');
-      return redirect()->to('/login/register');
+      return redirect()->to('/login/register2');
     } else {
       session()->setFlashdata('register', 'silahkan masukkan username dan password yang sudah anda daftarkan!!');
       return redirect()->to('/login/login_admin');
@@ -179,7 +181,7 @@ class Crud extends BaseController
     if (!$dataUser) {
       $session->setFlashdata('notreg', 'username dan password yang anda masukkan belum di daftar!!
       silahkan daftar dibawah ');
-      return redirect()->to('/login/register');
+      return redirect()->to('/login/register2');
     }
     if ($dataUser['Password'] != $Password) {
       $session->setFlashdata('error', 'Password yang anda masukkan salah!!');
@@ -221,6 +223,6 @@ class Crud extends BaseController
     $session = session();
     $session->destroy();
     $session->setFlashdata('logout', 'anda sudah logout');
-    return redirect()->to('/login/register');
+    return redirect()->to('/login/register2');
   }
 }

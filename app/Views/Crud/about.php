@@ -1,27 +1,5 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('copas'); ?>
-<div class="container">
-  <nav class="navigasi">
-    <h3>Khaerunnizam | ZAM.dev</h3>
-    <div class="link">
-      <?php
-      if (session()->get('login') === true): ?>
-        <a href="/Crud/home">home</a>
-        <a href="/Crud/about">about</a>
-        <a href="/Crud/data">Motivate your self</a>
-        <a href="/Crud/contac">Contac me</a>
-        <a href="/logout">logout</a>
-      <?php else : ?>
-        <a href="/Crud/home">home</a>
-        <a href="/Crud/about">about</a>
-        <a href="/Crud/data">Motivate your self</a>
-        <a href="/Crud/contac">Contac me</a>
-        <a href="/login/register">Login</a>
-      <?php endif ?>
-      <
-        </div>
-  </nav>
-</div>
 <div class="konten">
   <h3>ABOUT MOTIVATE YOURSELF</h3>
   <br />
@@ -47,24 +25,14 @@
       </p>
     </span>
   </div>
-  <br>
-  <br>
-  <hr>
   <div class="callme">
     <h3>GPP LAH SESEKALI TEKAN TOMBOL FOLLOW</h3>
-    <br>
-    <br>
     <div class="media">
-      <img src="/img/ig.png" alt="instagram" />
-      <img src="/img/fb.png" alt="facebook" />
-      <img src="/img/tiktok.png" alt="tiktok" />
+      <a href=""><i class='bx bxl-tiktok bx-lg' style='color:#12f1d2'></i></a>
+      <a href=""><i class='bx bxl-instagram-alt bx-lg' style='color:#12f1d2'></i></a>
+      <a href=""><i class='bx bxl-facebook-circle bx-lg' style='color:#12f1d2'></i></a>
+      <a href=""><i class='bx bxl-github bx-lg' style='color:#12f1d2'></i></a>
     </div>
   </div>
 </div>
-<footer id="about">
-  copyright &copy; 2024
-  <b>WebPrograming | Zam.dev </b>
-</footer>
-
-
 <?= $this->endSection(); ?>
