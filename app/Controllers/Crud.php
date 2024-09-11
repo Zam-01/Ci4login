@@ -69,7 +69,7 @@ class Crud extends BaseController
       'id_skill'  => $this->request->getVar('id_skill')
     ]);
     session()->setFlashdata('pesan', 'WAW ,MOTIVASIMU KEREN ');
-    return redirect()->to('/Crud/data');
+    return redirect()->to('/content/data');
   }
   //hapus data 
   public function hapus($id)
@@ -106,7 +106,7 @@ class Crud extends BaseController
     ]);
     //kirim pesan jika data berhasil ditambah
     session()->setFlashdata('pesan', 'MOTIVASIMU BERHASIL DI UBAH ');
-    return redirect()->to('/Crud/data');
+    return redirect()->to('/content/data');
   }
   // login email username and pasword
   protected $daftarmodel;

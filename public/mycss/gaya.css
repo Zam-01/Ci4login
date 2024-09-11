@@ -1,0 +1,189 @@
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #131111;
+}
+
+/* Style for the body */
+body {
+  background-color: white;
+
+  display: flex;
+}
+
+/* Style for the aside navigation */
+aside {
+  width: 15%;
+  border-right: 1px solid #59ccfa;
+  height: 160vh; /* Full height */
+  box-sizing: border-box;
+}
+aside nav {
+  margin: 2em;
+  width: 100%;
+  height: 90vh;
+  margin: 30px 1vh 1px 0px;
+  line-height: 10vh;
+}
+
+/* Style for the nav and ul inside aside */
+.links {
+  width: 80%;
+  margin: 15vh 4px 3px 1vh;
+  display: flex;
+  flex-direction: column;
+}
+.links div {
+  width: 15vh;
+  margin: 3px;
+}
+.links div img {
+  margin: 1em;
+  width: 2.5vh;
+}
+.links div > a {
+  font-size: 0.9em;
+  display: inline-block;
+  width: 14vh;
+  height: 6vh;
+  line-height: 6vh;
+  text-align: center;
+  border-bottom: 2.5px solid whitesmoke;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  outline: none;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.links div a:hover {
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  box-shadow: 0px 0px 5px 0.5px whitesmoke;
+}
+
+/* Style for the main content */
+main {
+  margin-top: 15vh;
+  width: 150%;
+  padding: 30px;
+  flex-grow: 1;
+}
+.my-project .image,
+main .image {
+  margin: 20px;
+  padding: 10px 5px;
+  width: 40%;
+  top: 10vh;
+  left: 30%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+}
+.my-project .image img,
+.image img {
+  width: 70%;
+  opacity: 0.2;
+}
+main .services {
+  width: 100%;
+}
+.costum {
+  margin: 0;
+  padding: 0;
+  width: 92%;
+  height: 11%;
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 0;
+  border-bottom: 1px solid rgb(84, 84, 247);
+}
+/* img user  */
+.dropdown a {
+  width: 80%;
+  line-height: 5vh;
+  margin: 1px auto;
+  border-bottom: 2px solid rgb(252, 241, 241);
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+.dropdown a img {
+  width: 5vh;
+  border: 0px solid;
+  outline: none;
+  object-fit: cover;
+  border-radius: 15vh;
+  -webkit-border-radius: 15vh;
+  -moz-border-radius: 15vh;
+  -ms-border-radius: 15vh;
+  -o-border-radius: 15vh;
+}
+/* jumlah data user dan dan data yang ada di dalam databse */
+.jumlah {
+  margin: 10px auto;
+  width: 90%;
+  padding: 2em;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+}
+.jumlah .user-data,
+.jumlah .data-db {
+  margin: 3vh;
+  padding: 2em;
+  width: 50%;
+}
+
+.name {
+  position: absolute;
+  left: 0;
+}
+.name p {
+  color: white;
+  font-size: 1.5em;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  margin-left: 15vh;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 3vh;
+  -webkit-border-radius: 3vh;
+  -moz-border-radius: 3vh;
+  -ms-border-radius: 3vh;
+  -o-border-radius: 3vh;
+}
+.name{
+  margin: 10em 10vh 10vh 25vh;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+}
+.name img {
+  width: 35vh;
+}
+.hero img {
+  width: 35vh;
+}
+.main-data {
+  margin-top: 50vh;
+}

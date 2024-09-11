@@ -6,7 +6,45 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 //$routes->get('/', 'Home::index');
-$routes->get('/', 'Crud::home');
+
+// portfolio
+$routes->get('/', 'Portfolio::index');
+$routes->get('/about', 'Portfolio::about');
+$routes->get('/projects', 'Portfolio::project');
+$routes->get('/contac', 'Portfolio::contac');
+// end portfolio
+
+// routes ke crud 
+$routes->get('/Content', 'Cruds::index');
+$routes->get('/Cruds/home', 'Cruds::index');
+$routes->get('/Cruds/about', 'Cruds::about');
+$routes->get('/Cruds/data', 'Cruds::data');
+// edit dan hapus data
+$routes->get('/hapus/(:num)', 'Cruds::hapus/$1');
+$routes->get('/ubah/(:num)', 'Cruds::edit/$1');
+// jika data sudah di ubah lansung alihkan ke data
+$routes->get('/content/data', 'Cruds::data');
+// ini di gunakan ketika useradmin mencari data
+$routes->post('/content/data', 'Cruds::data');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $routes->get('/Crud', 'Crud::home');
 $routes->get('/Crud/home', 'Crud::home');
 $routes->get('/Crud/about', 'Crud::about');
@@ -18,9 +56,6 @@ $routes->get('/Crud/register', 'Crud::login');
 //insert data
 $routes->post('/Crud/save', 'Crud::save');
 //hapus data
-$routes->get('/hapus(:num)', 'Crud::hapus/$1');
-//edit data
-$routes->get('/ubah(:num)', 'Crud::edit/$1');
 //update data
 $routes->post('/Crud/update/(:num)', 'Crud::update/$1');
 $routes->post('Crud/data', 'Crud::data');
