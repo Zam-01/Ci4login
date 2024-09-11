@@ -33,6 +33,13 @@
         <?php if (session()->getFlashdata('login')): ?>
           <h5 class="text-center fs-6"> <?= session()->getFlashdata('login'); ?></h5>
         <?php endif ?>
+        <?php
+        if ($valid->getError('Email')):
+        ?>
+          <h6 class="fs-6">
+            <?= $valid->getError('Email'); ?>
+          </h6>
+        <?php endif ?>
         <form method="post" action="/Crud/Daftar">
           <div class="mb-3 email-username">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -42,13 +49,6 @@
               class="form-control fw-bold"
               id="exampleInputEmail1"
               aria-describedby="emailHelp" required />
-            <?php
-            if ($valid->getError('Email')):
-            ?>
-              <div class="invalid-feedback">
-                <?= $valid->getError('Email'); ?>
-              </div>
-            <?php endif ?>
             <br />
             <br />
             <br />

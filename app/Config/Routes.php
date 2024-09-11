@@ -34,14 +34,7 @@ if (session()->get('login') !== true) {
     $routes->get('/Crud/data', 'Crud::data');
   }
 }
-// testing join model
-//$routes->get('/test', 'Crud::test');
-// if (session()->get('login') === false) {
 
-// } else {
-//   $routes->get('/Crud/data', 'Crud::data');
-
-// }
 
 
 //login user
@@ -50,5 +43,6 @@ $routes->post('/Crud/Daftar', 'Crud::getdata');
 $routes->get('/Crud/sigin', 'Crud::sigin');
 $routes->post('/Crud/get_sigin', 'Crud::get_sigin');
 $routes->get('/logout', 'Crud::logout');
+$routes->post('/Crud/ViewAdmin', 'Crud::ViewAdmin');
 $routes->get('/Crud/ViewAdmin', 'Crud::ViewAdmin');
 $routes->get('/login/login_admin', 'Crud::sigin');

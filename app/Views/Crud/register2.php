@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap demo</title>
+  <title>Form registrasi</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -23,7 +23,6 @@
             <div class="mb-3 Nama-Alamat">
               <label for="exampleInputEmail1" class="form-label">Nama</label>
               <input
-
                 name="Nama"
                 type="text"
                 class="form-control fw-bold"
@@ -31,7 +30,6 @@
                 aria-describedby="emailHelp" />
               <label for="exampleInputPassword1" class="form-label">Hobi</label>
               <input
-
                 name="Hobi"
                 type="text"
                 class="form-control fw-bold"
@@ -41,7 +39,6 @@
             <div class="Motivasi-Umur">
               <label for="exampleInputPassword1" class="form-label">Umur</label>
               <input
-
                 name="Umur"
                 type="number"
                 class="form-control fw-bold"
