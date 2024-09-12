@@ -10,11 +10,25 @@
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="/Css/gaya.css" />
+  <link rel="stylesheet" href="/Css/register.css" />
 </head>
 
-<body class="bg-secondary-subtle">
-  <div class="container">
+<body>
+  <div class="hero-content">
+    <img src="/img/join.png" alt="">
+    <header>
+      <h1 class="text-white">Daftar Disini</h1>
+      <article>
+        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quo? Dolorem qui quaerat soluta ad obcaecati molestiae impedit cumque commodi?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam deserunt natus porro exercitationem eum, minus molestias officia quibusdam vero assumenda? Assumenda sapiente officiis cumque deserunt voluptas, ipsa non autem praesentium architecto eos eligendi provident at culpa earum distinctio labore et?
+        </p>
+      </article>
+    </header>
+  </div>
+  <?php if (session()->getFlashdata('login')): ?>
+    <h5 class="text-center fs-6 text-white"> <?= session()->getFlashdata('login'); ?></h5>
+  <?php endif ?>
+  <main class="container-form">
     <?php if (session()->getFlashdata('notreg')): ?>
       <h4 style="
         text-align:center;
@@ -25,89 +39,65 @@
       // echo session()->getFlashdata('gagal');
     ?>
     <?php endif; ?>
-    <div class="col">
-      <?php if (session()->getFlashdata('password')): ?>
-        <h5 class="text-center fs-6"> <?= session()->getFlashdata('password'); ?></h5>
-      <?php endif ?>
-      <div class="row">
-        <?php if (session()->getFlashdata('login')): ?>
-          <h5 class="text-center fs-6"> <?= session()->getFlashdata('login'); ?></h5>
-        <?php endif ?>
+
+
+    <form method="post" action="/Crud/Daftar" class="border rounded-4 p-4 input">
+      <div class="email-username">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          name="Email"
+          class="form-control fw-bold <?= ($validation->getError('Email')) ? 'is-invalid' : ''; ?>"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp" required />
+        <div class="invalid-feedback">
+          <?= $validation->getError('Email'); ?>
+        </div>
+        <br>
+        <label for="exampleInputPassword1" class="form-label">Username</label>
+        <input
+          type="text"
+          name="Username"
+          class="form-control fw-bold <?= ($validation->getError('Email')) ? 'is-invalid' : ''; ?>"
+          id="exampleInputPassword1" required />
         <?php
-        if ($valid->getError('Email')):
+        if ($validation->getError('Username')):
         ?>
-          <h6 class="fs-6">
-            <?= $valid->getError('Email'); ?>
-          </h6>
+          <div class="invalid-feedback">
+            <?= $validation->getError('Username'); ?>
+          </div>
         <?php endif ?>
-        <form method="post" action="/Crud/Daftar">
-          <div class="mb-3 email-username">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input
-              type="email"
-              name="Email"
-              class="form-control fw-bold"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp" required />
-            <br />
-            <br />
-            <br />
-            <label for="exampleInputPassword1" class="form-label">Username</label>
-            <input
-              type="text"
-              name="Username"
-              class="form-control fw-bold"
-              id="exampleInputPassword1" required />
-            <?php
-            if ($valid->getError('Username')):
-            ?>
-              <div class="invalid-feedback">
-                <?= $valid->getError('Username'); ?>
-              </div>
-            <?php endif ?>
-          </div>
-          <div class="mb-3 Password-chek">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input
-              type="password"
-              name="Password"
-              maxlength="8"
-              class="form-control fw-bold"
-              id="exampleInputPassword1" required />
-            <?php
-            if ($valid->getError('Password')):
-            ?>
-              <div class="invalid-feedback">
-                <?= $valid->getError('Password'); ?>
-              </div>
-            <?php endif ?>
-            <br />
-            <br />
-            <br />
-            <label for="exampleInputPassword1" class="form-label">Chek Your Password</label>
-            <input
-              type="password"
-              name="chekPass"
-              maxlength="8"
-              class="form-control fw-bold"
-              id="exampleInputPassword1" />
-            <?php
-            if ($valid->getError('')):
-            ?>
-              <div class="invalid-feedback">
-                <?= $valid->getError(''); ?>
-              </div>
-            <?php endif ?>
-          </div>
-          <div class="buttons">
-            <button type="submit" name="submit" class="btn btn-primary">Daftar</button>
-            <p>Or</p>
-            <a href="/Crud/sigin" class="btn btn-primary"> Sigin</a>
-          </div>
-        </form>
       </div>
-    </div>
-  </div>
+      <div class="Password-chek">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          name="Password"
+          maxlength="8"
+          class="form-control fw-bold <?= (session()->getFlashdata('salah')) ? 'is-invalid' : ''; ?>"
+          id=" exampleInputPassword1" required />
+        <div class="invalid-feedback">
+          <?= session()->getFlashdata('salah'); ?>
+        </div>
+        <br>
+        <label for="exampleInputPassword1" class="form-label">Chek Your Password</label>
+        <input
+          type="password"
+          name="chekPass"
+          maxlength="8"
+          class="form-control fw-bold"
+          id="exampleInputPassword1" />
+      </div>
+      <div class="buttons">
+        <button type="submit" name="submit" class="btn btn-primary">Daftar</button>
+        <p class="text-white">Or</p>
+        <a href="/Crud/sigin" class="btn btn-primary"> Sigin</a>
+      </div>
+    </form>
+    <section class="register">
+      <img src="/img/register.png" alt="">
+    </section>
+  </main>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

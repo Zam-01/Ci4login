@@ -18,7 +18,14 @@ $routes->get('/contac', 'Portfolio::contac');
 $routes->get('/Content', 'Cruds::index');
 $routes->get('/Cruds/home', 'Cruds::index');
 $routes->get('/Cruds/about', 'Cruds::about');
-$routes->get('/Cruds/data', 'Cruds::data');
+// filter login
+if (session()->get('login') !== true) {
+  $routes->get('/Cruds/data', 'Cruds::data', ['filter' => 'auth']);
+} else {
+  if (session()->get('login') == true) {
+    $routes->get('/Cruds/data', 'Cruds::data');
+  }
+}
 // edit dan hapus data
 $routes->get('/hapus/(:num)', 'Cruds::hapus/$1');
 $routes->get('/ubah/(:num)', 'Cruds::edit/$1');
@@ -26,10 +33,22 @@ $routes->get('/ubah/(:num)', 'Cruds::edit/$1');
 $routes->get('/content/data', 'Cruds::data');
 // ini di gunakan ketika useradmin mencari data
 $routes->post('/content/data', 'Cruds::data');
+// logout
+$routes->get('/logout', 'Crud::logout');
 
 
 
 
+
+
+//login user
+$routes->get('/login/register2', 'Crud::Userlogin');
+$routes->post('/Crud/Daftar', 'Crud::getdata');
+$routes->get('/Crud/sigin', 'Crud::sigin');
+$routes->post('/Crud/get_sigin', 'Crud::get_sigin');
+$routes->post('/Crud/ViewAdmin', 'Crud::ViewAdmin');
+$routes->get('/Crud/ViewAdmin', 'Crud::ViewAdmin');
+$routes->get('/login/login_admin', 'Crud::sigin');
 
 
 
@@ -61,23 +80,3 @@ $routes->post('/Crud/update/(:num)', 'Crud::update/$1');
 $routes->post('Crud/data', 'Crud::data');
 // multipel tabel / join
 //$routes->get('/siswa', 'Home::index');
-
-if (session()->get('login') !== true) {
-  $routes->get('/Crud/data', 'Crud::data', ['filter' => 'auth']);
-} else {
-  if (session()->get('login') == true) {
-    $routes->get('/Crud/data', 'Crud::data');
-  }
-}
-
-
-
-//login user
-$routes->get('/login/register2', 'Crud::Userlogin');
-$routes->post('/Crud/Daftar', 'Crud::getdata');
-$routes->get('/Crud/sigin', 'Crud::sigin');
-$routes->post('/Crud/get_sigin', 'Crud::get_sigin');
-$routes->get('/logout', 'Crud::logout');
-$routes->post('/Crud/ViewAdmin', 'Crud::ViewAdmin');
-$routes->get('/Crud/ViewAdmin', 'Crud::ViewAdmin');
-$routes->get('/login/login_admin', 'Crud::sigin');

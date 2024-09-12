@@ -22,9 +22,11 @@
         <div>
           <a href="/Cruds/data"><img src="/img/data.png" alt=""> data</a>
         </div>
-        <div>
-          <a href="">disable</a>
-        </div>
+        <?php if (session()->get('login') === true): ?>
+          <div>
+            <a href="/logout"><img src="/img/logout.png" alt="">Logout</a>
+          </div>
+        <?php endif ?>
       </section>
     </nav>
   </aside>

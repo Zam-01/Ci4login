@@ -14,7 +14,7 @@ class LoginFilter implements FilterInterface
         //// cek ketika user belum login
     if (session()->get('login') != true ) {
         session()->setFlashdata('login', 'silahkan anda daftar/sigin terlebih dahulu');
-        return redirect()->to(site_url('/login/register'));
+        return redirect()->to(site_url('/login/register2'));
     }
     }
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

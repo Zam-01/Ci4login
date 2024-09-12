@@ -118,13 +118,13 @@ class Crud extends BaseController
   {
     session();
     $data = [
-      'valid' => \Config\Services::validation()
+      'validation' => \Config\Services::validation()
     ];
     return view('/login/register2', $data);
   }
   public function getdata()
   {
-    $validation = \Config\Services::validation();
+
     if (!$this->validate([
       'Email' => [
         'rules'  => 'is_unique[login.Email]',
@@ -140,21 +140,23 @@ class Crud extends BaseController
         ],
       ],
     ])) {
-      return view('/login/register2', ['valid' => $validation]); //mengirim pesan kesalahan dari validation
+      $data['validation'] = \Config\Services::validation();
+      return view('/login/register2', $data); //mengirim pesan kesalahan dari validation
     }
     $Username =  $this->request->getVar('Username');
     $Password =  $this->request->getVar('Password');
     $Email =  $this->request->getVar('Email');
     $chekPass =  $this->request->getVar('chekPass');
-    if ($Password != $chekPass) {
-      session()->setFlashdata('password', 'Password yang anda masukkan salah');
-      return redirect()->to('/login/register2');
-    } else {
+    if ($Password === $chekPass) {
       $register = $this->daftarmodel->insert([
         'Username' => $Username,
         'Password' => $Password,
         'Email' => $Email
       ]);
+    } else {
+      $data['validation'] = \Config\Services::validation();
+      session()->setFlashdata('salah', 'password yang anda masukkan salah');
+      return view('/login/register2', $data);
     }
     if (empty($register)) {
       session()->setFlashdata('gagal', 'silahkan registrasi terlebih dahulu');
@@ -216,13 +218,13 @@ class Crud extends BaseController
         ->join('skill', 'skill.id_skill = data_motivasi.id_skill')
         ->findAll();
     }
-    return view('Crud/data', $data);
+    return view('content/data', $data);
   }
   public function logout()
   {
     $session = session();
     $session->destroy();
     $session->setFlashdata('logout', 'anda sudah logout');
-    return redirect()->to('/login/register2');
+    return redirect()->to('/');
   }
 }
