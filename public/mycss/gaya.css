@@ -10,69 +10,29 @@
 /* Style for the body */
 body {
   background-color: white;
-
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+/*navigasi*/
+.navbar-nav {
   display: flex;
+  justify-content: end;
+  gap: 3em;
+  align-items: center;
 }
-
-/* Style for the aside navigation */
-aside {
-  width: 15%;
-  border-right: 1px solid #59ccfa;
-  height: 160vh; /* Full height */
-  box-sizing: border-box;
-}
-aside nav {
-  margin: 2em;
-  width: 100%;
-  height: 90vh;
-  margin: 30px 1vh 1px 0px;
-  line-height: 10vh;
+#navbarNav {
+  display: flex;
+  justify-content: end;
+  margin-right: 5em;
 }
 
 /* Style for the nav and ul inside aside */
-.links {
-  width: 80%;
-  margin: 15vh 4px 3px 1vh;
-  display: flex;
-  flex-direction: column;
-}
-.links div {
-  width: 15vh;
-  margin: 3px;
-}
-.links div img {
-  margin: 1em;
-  width: 2.5vh;
-}
-.links div > a {
-  font-size: 0.9em;
-  display: inline-block;
-  width: 14vh;
-  height: 6vh;
-  line-height: 6vh;
-  text-align: center;
-  border-bottom: 2.5px solid whitesmoke;
-  border-top-right-radius: 0.5em;
-  border-top-left-radius: 0.5em;
-  outline: none;
-  color: whitesmoke;
-  text-decoration: none;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.links div a:hover {
-  border-top-right-radius: 0.5em;
-  border-top-left-radius: 0.5em;
-  box-shadow: 0px 0px 5px 0.5px whitesmoke;
-}
 
 /* Style for the main content */
 main {
   margin-top: 15vh;
-  width: 150%;
+  width: 100%;
   padding: 30px;
   flex-grow: 1;
 }
@@ -94,40 +54,6 @@ main .image {
 }
 main .services {
   width: 100%;
-}
-.costum {
-  margin: 0;
-  padding: 0;
-  width: 92%;
-  height: 11%;
-  position: absolute;
-  top: 0;
-  left: 8%;
-  right: 0;
-  border-bottom: 1px solid rgb(84, 84, 247);
-}
-/* img user  */
-.dropdown a {
-  width: 80%;
-  line-height: 5vh;
-  margin: 1px auto;
-  border-bottom: 2px solid rgb(252, 241, 241);
-  border-radius: 10%;
-  -webkit-border-radius: 10%;
-  -moz-border-radius: 10%;
-  -ms-border-radius: 10%;
-  -o-border-radius: 10%;
-}
-.dropdown a img {
-  width: 5vh;
-  border: 0px solid;
-  outline: none;
-  object-fit: cover;
-  border-radius: 15vh;
-  -webkit-border-radius: 15vh;
-  -moz-border-radius: 15vh;
-  -ms-border-radius: 15vh;
-  -o-border-radius: 15vh;
 }
 /* jumlah data user dan dan data yang ada di dalam databse */
 .jumlah {
@@ -186,4 +112,15 @@ main .services {
 }
 .main-data {
   margin-top: 50vh;
+  padding-bottom: 50vh;
+}
+/* ini untuk   responsive mobile*/
+@media (minwidth: 476px) and (maxwidth: 500px) {
+  body {
+    position: relative;
+  }
+  .costum,
+  .bg-primary {
+    display: none;
+  }
 }

@@ -1,36 +1,7 @@
 <?= $this->extend('layout/CrudBody'); ?>
 <?= $this->section('crud-content'); ?>
-<div class="bg-primary costum d-flex justify-content-end p-4 content">
-  <section class="name">
-    <p> welcome to programing | Zam.dev </p>
-  </section>
-  <div class="dropdown">
-    <a
-      class="dropdown-toggle btn btn-primary"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-bs-toggle="dropdown"
-      aria-expanded="false">
-      <img src="/img/boy.png" alt="" />
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li class="d-flex m-2">
-        <a class="dropdown-item" href="#"><button class="btn btn-outline-primary">Login</button></a>
-        <a class="dropdown-item" href="#"><button class="btn btn-outline-info">Sigin</button></a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">Login/sigin disini</a>
-      </li>
-    </ul>
-  </div>
-</div>
+
 <main>
-  <!-- <div class="condition">
-    <section>
-      <h1>Anda belum login , silahkan login terlebih dahulu</h1>
-    </section>
-  </div> -->
   <section class="hero">
     <img src="/img/Hello.png" alt="">
     <header>
@@ -41,13 +12,13 @@
   <br />
   <div class="my-project mt-3">
     <div class="home">
-      <section id="Home w-100">
+      <section class="Home w-100">
         <h5
-        class="text-primary-emphasis text-capitalize fw-semibold fst-italic opacity-75">
-        CRUD menggunakan framework php codeigniter 4
+          class="text-primary-emphasis text-capitalize fw-semibold fst-italic opacity-75">
+          CRUD menggunakan framework php codeigniter 4
         </h5>
-        <article class="w-100 d-flex">
-          <p class="opacity-75 fw-semibold fs-5 w-75 m-2 p-2 text-black">
+        <article class="w-100 d-flex text">
+          <p class="opacity-75 fw-semibold  m-2 p-2 text-black">
             MOTIVATE YOURSELF adalah sebuah website yang bisa digunakan oleh
             user untuk menyimpan ataupun membuat sebuah kata-kata
             (bermanfaat bagi individu/kelompok). seperti yang kita lihat
@@ -60,15 +31,10 @@
             sebagai referensi(contoh) agar user bisa berkreasi dan juga
             memotivasi para pengguna yang lain .
           </p>
-          <p class="fs-5 w-75 m-2 p-2">
+          <p class="m-2 p-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
             maxime esse deserunt, enim, doloribus dolorem sunt accusantium
-            tempora eaque placeat architecto accusamus quae recusandae odit
-            distinctio at repellat magnam quos? Sunt deleniti saepe esse
-            maxime ad eius voluptatibus ut, consequuntur labore. Nulla
-            deserunt aspernatur inventore voluptatum ratione, impedit vero
-            corporis quos fuga id? Ad odit optio dolorum laudantium commodi
-            architecto! Molestiae a labore dolorum doloribus porro omnis
+            tempora eaque placeat architecto accusamus quae recusandae odit doloribus porro omnis
           </p>
         </article>
         <div class="jumlah">
@@ -83,7 +49,7 @@
             </p>
           </div>
           <div class="data-db">
-            <h2>Data yang ditambahkan =>  <?= $jumlahdata; ?></h2>
+            <h2>Data yang ditambahkan => <?= $jumlahdata; ?></h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               numquam aut perferendis beatae ipsa commodi. Ipsum tempore velit

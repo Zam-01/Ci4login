@@ -1,5 +1,6 @@
 <?= $this->extend('layout/CrudBody'); ?>
 <?= $this->section('crud-content'); ?>
+
 <section class="name">
   <img src="/img/jumlahdata.png" alt="">
   <header>
@@ -12,32 +13,7 @@
     </article>
   </header>
 </section>
-
-<div class="bg-primary costum d-flex justify-content-end p-4 content">
-  <div class="dropdown">
-    <a
-      class="dropdown-toggle btn btn-primary"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-bs-toggle="dropdown"
-      aria-expanded="false">
-      <img src="/img/boy.png" alt="" />
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li class="d-flex m-2">
-        <a class="dropdown-item" href="#"><button class="btn btn-outline-primary">Login</button></a>
-        <a class="dropdown-item" href="#"><button class="btn btn-outline-info">Sigin</button></a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">Login/sigin disini</a>
-      </li>
-    </ul>
-  </div>
-</div>
 <main class="main-data">
-
-
   <?php
   if (session()->getFlashdata('pesan')) : ?>
     <h4 class="text-center text-success fs-4 fw-semibold ">
@@ -59,7 +35,7 @@
   endif;
   ?>
   <div class="data">
-    <div class="container mt-5 ms-0">
+    <div class="container mt-5">
       <a href="/Crud/register" class="text-decoration-none btn btn-outline-primary" role="button">
         Tambah data
       </a>
